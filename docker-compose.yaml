@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  dev:
+    build:
+      context: .
+      dockerfile:  ./Dockerfile
+    command: sleep 1000000
+    volumes:
+      - ./:/src
+
+  mongo:
+    image: mongo:4.4-bionic

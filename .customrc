@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Hi Calvin!"
+alias cd.="cd .."
+alias cd..="cd ../.."
+alias cd...="cd ../../.."
+alias la="ls -lah"

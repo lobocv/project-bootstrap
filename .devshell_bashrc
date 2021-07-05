@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Define any common useful aliases or functions for the team
+alias gotest="go test ./..."
+alias testify="go test -testify.m"
+alias lint="golangci-lint run -v ./..."
+
+function help() {
+  echo "
+=======================================
+Welcome to the dev shell
+=======================================
+
+Type "help" in the shell to repeat this message.
+
+Additional shell customizations can be loaded by creating a .customrc file in the root of the project.
+
+Here is a list of common commands you can do:
+
+* gotest: Run all go tests in the current directory
+
+* lint: Run golangci-lint in the current directory
+
+* testify: Run a testify test by name
+  Arguments:
+      1 : Regex to match test names
+"
+}
+
+# Source any user-specific / personal aliases or functions
+if [[ -f .customrc ]]; then
+    echo "Custom shell configuration found. Loading..."
+    source .customrc
+fi
+
+help
